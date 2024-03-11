@@ -12,13 +12,26 @@ function getHandleClick(){
       return response.json();
     })
     .then(data => {
-      containerArray.innerHTML = '';
-        console.log(data);
+      const tbody = document.querySelector('table tbody');
+      
+      tbody.innerHTML = '';
+  
       data.forEach(item => {
-        console.log(item);
-        let listItem = document.createElement('li');
-        listItem.innerHTML = `Date: ${item.date}, Devis: ${item.devis}, Pack: ${item.pack}`;
-        containerArray.appendChild(listItem);
+          let tableRow = document.createElement('tr');
+  
+          let dateCell = document.createElement('td');
+          dateCell.textContent = item.date;
+          tableRow.appendChild(dateCell);
+  
+          let devisCell = document.createElement('td');
+          devisCell.textContent = item.devis;
+          tableRow.appendChild(devisCell);
+  
+          let packCell = document.createElement('td');
+          packCell.textContent = item.pack;
+          tableRow.appendChild(packCell);
+  
+          tbody.appendChild(tableRow);
       });
     })
     .catch(error => {
@@ -28,8 +41,8 @@ function getHandleClick(){
 }
 
 function clearContainer() {
-  let containerArray = document.getElementById('container-array');
-  containerArray.innerHTML = '';
+  const tbody = document.querySelector('table tbody');
+  tbody.innerHTML = '';
 }
 
 function redirectToArchive(){
@@ -41,3 +54,4 @@ function redirectToArchive(){
 
     window.location.href = 'archive.html';
 }
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <title>Expédition-Fenouillet</title>
+  </head>
+  <body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"
+          ><img
+            src="../assets/téléchargement.png"
+            class="img-11ts"
+            width="300px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Réception</a>
+            <a class="nav-link active" aria-current="page" href="#"
+              >Expédition</a
+            >
+            <a class="nav-link" href="archive.html">Archives</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <h2>Formulaire de Données</h2>
+
+    <form id="dataForm">
+      <label for="date">Date :</label>
+      <input type="text" id="date" name="date" required /><br />
+
+      <label for="devis">Devis :</label>
+      <input type="text" id="devis" name="devis" required /><br />
+
+      <label for="pack">Pack :</label>
+      <input type="text" id="pack" name="pack" required /><br />
+
+      <label for="palette">Palette :</label>
+      <input type="text" id="palette" name="palette" required /><br />
+
+      <button type="button" onclick="ajouterLigne()">Ajouter à la table</button>
+    </form>
+
+    <table id="dataTable" border="1">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Devis</th>
+          <th>Pack</th>
+          <th>Palette</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button type="button" onclick="envoyerDonnees()">
+      Envoyer à la base de données
+    </button>
+    <button type="button" onclick="corrigerLignes()">
+      Corriger les lignes
+    </button>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/addCommand.js"></script>
+  </body>
+</html>

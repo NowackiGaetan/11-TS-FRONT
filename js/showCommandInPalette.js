@@ -30,6 +30,10 @@ function getHandleClick(){
           let packCell = document.createElement('td');
           packCell.textContent = item.pack;
           tableRow.appendChild(packCell);
+
+          let paletteCell = document.createElement('td');
+          paletteCell.textContent = item.palette;
+          tableRow.appendChild(paletteCell);
   
           tbody.appendChild(tableRow);
       });
@@ -45,13 +49,13 @@ function clearContainer() {
   tbody.innerHTML = '';
 }
 
-function redirectToArchive(){
-    let archivedData = JSON.parse(localStorage.getItem('archivedData')) || [];
+// function redirectToArchive(){
+//     let archivedData = JSON.parse(localStorage.getItem('archivedData')) || [];
 
-    archivedData.push(...array);
+//     archivedData.push(...array);
 
-    localStorage.setItem('archivedData', JSON.stringify(archivedData));
+//     localStorage.setItem('archivedData', JSON.stringify(archivedData));
 
-    window.location.href = 'archive.html';
-}
+//     window.location.href = 'archive.html';
+// }
 

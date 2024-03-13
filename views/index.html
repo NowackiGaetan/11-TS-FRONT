@@ -17,8 +17,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Réception</a>
-            <a class="nav-link" href="expedition.html">Expédition</a>
+            <a class="nav-link active" aria-current="page" href="#">Réception Toulouse</a>
+            <a class="nav-link" href="expedition.html">Expédition de Fenouillet</a>
             <a class="nav-link" href="archive.html">Archives</a>
           </div>
         </div>
@@ -27,15 +27,17 @@
     <div class="container-button-table">
       <input type="text" id="barcode"></input>
       <button class="btn btn-primary" type="button" id="btn-array" onclick="getHandleClick()">Chercher</button>
-      <button class="btn btn-danger" type="button" id="btn-array" onclick="clearContainer()">Effacer</button>
-      <button class="btn btn-success" type="button" id="btn-archive" onclick="redirectToArchive()">Réceptionner</button>
-  </div>
+      <button class="btn btn-danger" type="button" id="btn-clear" onclick="clearContainer()">Effacer</button>
+      <button class="btn btn-success" type="submit" id="btn-archive">Réceptionner</button>
+      <!-- <button class="btn btn-light" type="button" id="btn-clear" onclick="clearInput()">Clear</button> -->
+    </div>
     <table class="table table-striped table-bordered table-sm" >
       <thead>
           <tr>
               <th class="th-sm" scope="col">Date</th>
               <th class="th-sm" scope="col">Devis</th>
               <th class="th-sm" scope="col">Pack</th>
+              <th class="th-sm" scope="col">Palette</th>
           </tr>
       </thead>
       <tbody>
@@ -43,7 +45,7 @@
   </table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="../js/script.js"></script>
-    <!-- <script src="../js/excelToMySql.js"></script> -->
+    <script src="../js/showCommandInPalette.js"></script>
+    <script src="../js/sendDataReceptionToArchive.js"></script>
   </body>
 </html>

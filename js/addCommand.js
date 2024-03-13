@@ -1,23 +1,23 @@
-var tableauDonnees = [];
+let tableauDonnees = [];
 
 function ajouterLigne() {
-    var date = document.getElementById("date").value;
-    var devis = document.getElementById("devis").value;
-    var pack = document.getElementById("pack").value;
-    var palette = document.getElementById("palette").value;
+    let date = document.getElementById("date").value;
+    let devis = document.getElementById("devis").value;
+    let pack = document.getElementById("pack").value;
+    let palette = document.getElementById("palette").value;
 
-    var table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
-    var nouvelleLigne = table.insertRow(table.rows.length);
+    let table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+    let nouvelleLigne = table.insertRow(table.rows.length);
     
-    var cellules = [date, devis, pack, palette];
+    let cellules = [date, devis, pack, palette];
 
-    for (var i = 0; i < cellules.length; i++) {
-        var cellule = nouvelleLigne.insertCell(i);
+    for (let i = 0; i < cellules.length; i++) {
+        let cellule = nouvelleLigne.insertCell(i);
         cellule.innerHTML = cellules[i];
     }
 
-    var celluleSupprimer = nouvelleLigne.insertCell(cellules.length);
-    var checkbox = document.createElement("input");
+    let celluleSupprimer = nouvelleLigne.insertCell(cellules.length);
+    let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     celluleSupprimer.appendChild(checkbox);
 
@@ -29,11 +29,11 @@ function ajouterLigne() {
 }
 
 function envoyerDonnees() {
-    var lignesActives = tableauDonnees.filter(function (ligne) {
+    let lignesActives = tableauDonnees.filter(function (ligne) {
         return ligne && ligne.data && !ligne.delete;
     });
 
-    var dataToSend = lignesActives.map(ligne => {
+    let dataToSend = lignesActives.map(ligne => {
         return {
             date: ligne.data[0],
             devis: ligne.data[1],
@@ -64,15 +64,31 @@ function envoyerDonnees() {
 }
 
 function corrigerLignes() {
-    var checkboxes = document.querySelectorAll("#dataTable tbody input[type=checkbox]");
-    for (var i = 0; i < checkboxes.length; i++) {
+    let checkboxes = document.querySelectorAll("#dataTable tbody input[type=checkbox]");
+    for (let i = 0; i < checkboxes.length; i++) {
         tableauDonnees[i].delete = checkboxes[i].checked;
     }
 
-    var table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
-    for (var i = checkboxes.length - 1; i >= 0; i--) {
+    let table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+    for (let i = checkboxes.length - 1; i >= 0; i--) {
         if (checkboxes[i].checked) {
             table.deleteRow(i);
         }
     }
 }
+
+
+
+let showTable = document.getElementsByClassName("showTable")[0];
+let containerDataTable = document.querySelector(".container-table-expedition");
+
+showTable.addEventListener("click", function() {
+    if (containerDataTable.style.display === "none" || containerDataTable.style.display === "") {
+        containerDataTable.style.display = "table";
+    } else {
+        containerDataTable.style.display = "none";
+    }
+});
+
+
+

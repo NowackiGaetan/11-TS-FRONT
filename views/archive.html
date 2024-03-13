@@ -30,6 +30,20 @@
     <button class="btn btn-dark" onclick="filterBy('devis')">Filtrer par Devis</button>
 
     <div id="archived-container"></div>
+    <table id="archivesTable" class="table table-striped table-bordered table-sm">
+      <thead>
+          <tr>
+              <th class="th-sm" scope="col">Date</th>
+              <th class="th-sm" scope="col">Devis</th>
+              <th class="th-sm" scope="col">Pack</th>
+              <th class="th-sm" scope="col">Palette</th>
+          </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
+  <div id="pagination" class="pagination">
+  </div>
     <button type="button" class="btn btn-dark">
       <a href="index.html">Retour Accueil</a>
     </button>
@@ -39,5 +53,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/archive.js"></script>
   </body>
 </html>

@@ -43,49 +43,95 @@
         </div>
       </div>
     </nav>
-    <h2>Formulaire de Données</h2>
+    <h2>Expédition colis</h2>
+    <div class="container-form-expedition">
+      <form id="dataForm">
+        <div>
+          <label class="form-label" for="date">Date :</label>
+          <input
+            class="form-control"
+            type="text"
+            id="date"
+            name="date"
+            required
+          /><br />
+        </div>
 
-    <form id="dataForm">
-      <label for="date">Date :</label>
-      <input type="text" id="date" name="date" required /><br />
+        <div>
+          <label class="form-label" for="devis">Devis :</label>
+          <input
+            class="form-control"
+            type="text"
+            id="devis"
+            name="devis"
+            required
+          /><br />
+        </div>
 
-      <label for="devis">Devis :</label>
-      <input type="text" id="devis" name="devis" required /><br />
+        <div>
+          <label class="form-label" for="pack">Pack :</label>
+          <input
+            class="form-control"
+            type="text"
+            id="pack"
+            name="pack"
+            required
+          /><br />
+        </div>
 
-      <label for="pack">Pack :</label>
-      <input type="text" id="pack" name="pack" required /><br />
+        <div>
+          <label class="form-label" for="palette">Palette :</label>
+          <input
+            class="form-control"
+            type="text"
+            id="palette"
+            name="palette"
+            required
+          /><br />
+        </div>
 
-      <label for="palette">Palette :</label>
-      <input type="text" id="palette" name="palette" required /><br />
+        <div>
+          <button
+            class="btn btn-dark showTable"
+            type="button"
+            onclick="ajouterLigne()"
+          >
+            Ajouter à la table
+          </button>
+        </div>
+      </form>
+      <div class="container-table-expedition" style="display: none">
+        <table id="dataTable" border="1">
+          <thead class="thead-dataTable">
+            <tr>
+              <th>Date</th>
+              <th>Devis</th>
+              <th>Pack</th>
+              <th>Palette</th>
+              <th>Supprimer</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
 
-      <button type="button" onclick="ajouterLigne()">Ajouter à la table</button>
-    </form>
-
-    <table id="dataTable" border="1">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Devis</th>
-          <th>Pack</th>
-          <th>Palette</th>
-          <th>Supprimer</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
-    <button type="button" onclick="envoyerDonnees()">
-      Envoyer à la base de données
-    </button>
-    <button type="button" onclick="corrigerLignes()">
-      Corriger les lignes
-    </button>
+        <button
+          class="btn btn-success"
+          type="button"
+          onclick="envoyerDonnees()"
+        >
+          Envoyer à la base de données
+        </button>
+        <button class="btn btn-danger" type="button" onclick="corrigerLignes()">
+          Corriger les lignes
+        </button>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/showCommandInPalette.js"></script>
     <script src="../js/addCommand.js"></script>
   </body>
 </html>

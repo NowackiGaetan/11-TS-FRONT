@@ -13,7 +13,10 @@
     <title>Expédition-Fenouillet</title>
   </head>
   <body>
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav
+      class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark"
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"
           ><img
@@ -34,10 +37,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="index.html">Réception</a>
             <a class="nav-link active" aria-current="page" href="#"
-              >Expédition</a
+              >Expédition de Fenouillet</a
             >
+            <a class="nav-link" href="index.html">Réception Toulouse</a>
             <a class="nav-link" href="archive.html">Archives</a>
           </div>
         </div>
@@ -101,14 +104,18 @@
         </div>
       </form>
       <div class="container-table-expedition" style="display: none">
-        <table id="dataTable" border="1">
+        <table
+          id="dataTable"
+          border="1"
+          class="table table-striped table-bordered table-sm table-expedition"
+        >
           <thead class="thead-dataTable">
             <tr>
-              <th>Date</th>
-              <th>Devis</th>
-              <th>Pack</th>
-              <th>Palette</th>
-              <th>Supprimer</th>
+              <th class="th-sm" scope="col">Date</th>
+              <th class="th-sm" scope="col">Devis</th>
+              <th class="th-sm" scope="col">Pack</th>
+              <th class="th-sm" scope="col">Palette</th>
+              <th class="th-sm" scope="col">Supprimer</th>
             </tr>
           </thead>
           <tbody></tbody>
@@ -133,5 +140,6 @@
     ></script>
     <script src="../js/showCommandInPalette.js"></script>
     <script src="../js/addCommand.js"></script>
+    <script src="../js/expeditionDate.js"></script>
   </body>
 </html>

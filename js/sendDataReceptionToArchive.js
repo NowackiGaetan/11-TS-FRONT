@@ -57,7 +57,3 @@ function envoyerVersBackend() {
 });
 }
 
-// function clearInput() {
-//     let inputElement = document.getElementById('barcode');
-//     inputElement.value = '';
-// }

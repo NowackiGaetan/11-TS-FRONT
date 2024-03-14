@@ -29,6 +29,12 @@ function ajouterLigne() {
 }
 
 function envoyerDonnees() {
+    let date = document.getElementById("date");
+    let devis = document.getElementById("devis");
+    let pack = document.getElementById("pack");
+    let palette = document.getElementById("palette");
+    let table = document.getElementById("dataTable").getElementsByTagName('tbody')[0];
+
     let lignesActives = tableauDonnees.filter(function (ligne) {
         return ligne && ligne.data && !ligne.delete;
     });
@@ -57,6 +63,11 @@ function envoyerDonnees() {
     })
     .then(data => {
         console.log('Réponse du serveur:', data);
+        alert("Commandes expediees avec succès!");
+        devis.value ="";
+        pack.value ="";
+        palette.value ="";
+        table.innerHTML ="";
     })
     .catch((error) => {
         console.error('Erreur lors de l\'envoi des données:', error);

@@ -9,7 +9,7 @@
   </head>
   <body>
 
-    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html"><img src="../assets/téléchargement.png" class="img-11ts" width="300px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,18 +17,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" href="index.html">Réception</a>
-            <a class="nav-link" href="expedition.html">Expédition</a>
+            <a class="nav-link" href="expedition.html">Expédition de Fenouillet</a>
+            <a class="nav-link" href="index.html">Réception Toulouse</a>
             <a class="nav-link active"aria-current="page" href="#">Archives</a>
           </div>
         </div>
       </div>
     </nav>
   <body>
-    <label for="devis-input">Devis :</label>
-    <input type="text" id="devis-input" />
-    <button class="btn btn-dark" onclick="filterBy('devis')">Filtrer par Devis</button>
-
+    <div class="container-filter-table-reception">
+      <input type="text" id="devis-input" class="soneSaisie" onkeyup="filter()" placeholder="Recherche..."/>
+      <button class="btn btn-success" id="exportBtn">Export CSV</button>
+    </div>
     <div id="archived-container"></div>
     <table id="archivesTable" class="table table-striped table-bordered table-sm">
       <thead>
@@ -42,11 +42,13 @@
       <tbody>
       </tbody>
   </table>
-  <div id="pagination" class="pagination">
+  <div id="pagination" class="pagination justify-content-center">
   </div>
+  <div class="display-button-return">
     <button type="button" class="btn btn-dark">
       <a href="index.html">Retour Accueil</a>
     </button>
+  </div>
     <script type="module" src="/src/main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -54,5 +56,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/archive.js"></script>
+    <script src="../js/filterTable.js"></script>
   </body>
 </html>

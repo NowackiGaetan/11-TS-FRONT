@@ -3,6 +3,10 @@ body{
     width: 100%;
     height: 100vh;
 }
+
+.nav-link{
+    margin-left: 4em
+}
 /*--------------reception(index.html)------------*/
 
 .table-striped{
@@ -50,6 +54,10 @@ h2{
     margin: 0.5em;
 }
 
+.container-table-expedition{
+    width: 100%;
+}
+
 #dataForm :nth-child(5){
     display: flex;
     justify-content: center;    
@@ -59,6 +67,10 @@ h2{
     margin: 2em;
     width: 90%;
     text-align: center;
+}
+
+.showTable{
+    margin-top:2em;
 }
 
 /*------archives---------*/
@@ -71,4 +83,29 @@ h2{
 
 button {
     margin: 0 5px;
+}
+
+.pagination button{
+    background: #8d8d8e;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: rgb(63, 63, 63) 3px 3px 3px;
+    margin-top: 0.5em;
+}
+
+.container-filter-table-reception,.display-button-return{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 1em;
+}
+
+.container-filter-table-reception input,.container-filter-table-reception button{
+    margin: 0.5em;
+}
+
+button, input, textarea{
+    box-shadow: rgb(63, 63, 63) 3px 3px 3px;
 }

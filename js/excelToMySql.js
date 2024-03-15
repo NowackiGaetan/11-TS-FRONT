@@ -22,7 +22,6 @@ const worksheet = workbook.Sheets[sheetName];
 // Conversion du fichier Excel en tableau d'objets
 const data = XLSX.utils.sheet_to_json(worksheet);
 
-// Insérer des données uniques dans la table MySQL
 data.forEach(row => {
     const sql = `
         INSERT IGNORE INTO expe_fenouillet (date, devis, pack, palette)
@@ -38,5 +37,4 @@ data.forEach(row => {
     });
 });
 
-// Fermer la connexion à la base de données
 connection.end();

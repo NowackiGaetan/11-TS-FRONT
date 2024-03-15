@@ -3,7 +3,7 @@ function filter() {
     let tableau = document.getElementById('archivesTable');
     let lignes = tableau.getElementsByTagName('tr');
 
-    for (let i = 0; i < lignes.length; i++) {
+    for (let i = 1; i < lignes.length; i++) {
         let cellules = lignes[i].getElementsByTagName('td');
         let afficherLigne = false;
 

@@ -1,4 +1,3 @@
-// Assurez-vous que l'événement est correctement lié
 document.getElementById('btn-archive').addEventListener('click', function () {
     envoyerVersBackend();
 });
@@ -8,7 +7,6 @@ function envoyerVersBackend() {
     let tbody = document.querySelector('table tbody');
     let barcode = document.getElementById('barcode');
 
-    // Récupérer les données du tableau
     let rows = document.querySelectorAll('table tbody tr');
 
     rows.forEach(function (row) {
@@ -19,10 +17,12 @@ function envoyerVersBackend() {
             if (index === 0) {
                 rowData['Date'] = cell.textContent.trim();
             } else if (index === 1) {
-                rowData['Devis'] = cell.textContent.trim();
+                rowData['DateRecep'] = cell.textContent.trim();
             } else if (index === 2) {
-                rowData['Pack'] = cell.textContent.trim();
+                rowData['Devis'] = cell.textContent.trim();
             } else if (index === 3) {
+                rowData['Pack'] = cell.textContent.trim();
+            } else if (index === 4) {
                 rowData['Palette'] = cell.textContent.trim();
             }
         });
@@ -31,7 +31,6 @@ function envoyerVersBackend() {
         console.log(rowData);
     });
 
-    // Envoi des données au backend
     fetch('http://localhost:28154/post/commandes-receptionnees', {
     method: 'POST',
     headers: {

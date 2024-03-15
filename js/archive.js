@@ -113,7 +113,9 @@ let data;
 
 function renderTable() {
     const tbody = document.querySelector('table tbody');
-    tbody.innerHTML = '';
+    const theadRows = document.querySelectorAll('table thead tr');
+
+    tbody.innerHTML = '';    
 
     data.forEach(item => {
         let tableRow = document.createElement('tr');
@@ -121,6 +123,10 @@ function renderTable() {
         let dateCell = document.createElement('td');
         dateCell.textContent = item.date;
         tableRow.appendChild(dateCell);
+
+        let dateRecepCell = document.createElement('td');
+        dateRecepCell.textContent = item.dateRecep;
+        tableRow.appendChild(dateRecepCell);
 
         let devisCell = document.createElement('td');
         devisCell.textContent = item.devis;

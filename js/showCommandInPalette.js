@@ -22,6 +22,11 @@ function getHandleClick(){
           let dateCell = document.createElement('td');
           dateCell.textContent = item.date;
           tableRow.appendChild(dateCell);
+
+          let dateRecep = new Date().toLocaleDateString();
+          let dateRecepCell = document.createElement('td');
+          dateRecepCell.textContent = dateRecep;
+          tableRow.appendChild(dateRecepCell);
   
           let devisCell = document.createElement('td');
           devisCell.textContent = item.devis;
@@ -49,13 +54,4 @@ function clearContainer() {
   tbody.innerHTML = '';
 }
 
-// function redirectToArchive(){
-//     let archivedData = JSON.parse(localStorage.getItem('archivedData')) || [];
-
-//     archivedData.push(...array);
-
-//     localStorage.setItem('archivedData', JSON.stringify(archivedData));
-
-//     window.location.href = 'archive.html';
-// }
 

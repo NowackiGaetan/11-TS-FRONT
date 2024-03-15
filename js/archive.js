@@ -51,6 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 });
 
+// function convertToCSV(objArray) {
+//     const array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+//     let str = '';
+
+//     let headers = Object.keys(array[0]);
+//     headers = headers.filter(header => header !== 'id');
+
+//     for (let i = 0; i < array.length; i++) {
+//         let line = '';
+//         for (let j = 0; j < headers.length; j++) {
+//             if (j > 0) line += ',';
+//             line += array[i][headers[j]];
+//         }
+//         str += line + '\r\n';
+//     }
+//     return str;
+// }
+
 function convertToCSV(objArray) {
     const array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
     let str = '';
@@ -58,16 +76,27 @@ function convertToCSV(objArray) {
     let headers = Object.keys(array[0]);
     headers = headers.filter(header => header !== 'id');
 
-    for (let i = 0; i < array.length; i++) {
+    const today = new Date().toLocaleDateString('fr-FR'); 
+
+    const filteredData = array.filter(item => {
+        const rowDate = item[headers[0]]; 
+        return rowDate === today;
+    });
+
+    // Convertir les données filtrées en format CSV
+    for (let i = 0; i < filteredData.length; i++) {
         let line = '';
         for (let j = 0; j < headers.length; j++) {
             if (j > 0) line += ',';
-            line += array[i][headers[j]];
+            line += filteredData[i][headers[j]];
         }
         str += line + '\r\n';
     }
+    
     return str;
 }
+
+
 
 function downloadCSV(data) {
     const csvContent = convertToCSV(data);

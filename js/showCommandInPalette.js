@@ -4,7 +4,7 @@ function getHandleClick(){
     let containerArray = document.getElementById('container-array');
     let barcode = document.getElementById('barcode').value;
 
-    fetch(`http://localhost:28154/${barcode}/devispalettes`)
+    fetch(`http://localhost:28154/${barcode}/devispalettes`)   
     .then(response => {
       if (!response.ok) {
         throw new Error(`Erreur de réseau - ${response.statusText}`);

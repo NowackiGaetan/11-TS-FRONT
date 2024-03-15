@@ -73,6 +73,14 @@ h2{
     margin-top:2em;
 }
 
+.container-button-expedition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 1em;
+}
+
 /*------archives---------*/
 
 #pagination {

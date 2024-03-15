@@ -18,7 +18,7 @@
       data-bs-theme="dark"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"
+        <a class="navbar-brand" href="#"
           ><img
             src="../assets/téléchargement.png"
             class="img-11ts"
@@ -41,8 +41,11 @@
               >Expédition de Fenouillet</a
             >
             <a class="nav-link" href="index.html">Réception Toulouse</a>
-            <a class="nav-link" href="archive.html">Archives</a>
-            <a class="nav-link" href="https://o-code-barre.netlify.app/"
+            <a class="nav-link" href="archive.html">Recherche dossier</a>
+            <a
+              class="nav-link"
+              href="https://o-code-barre.netlify.app/"
+              target="_blank"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -81,6 +84,8 @@
             id="devis"
             name="devis"
             required
+            maxlength="6"
+            data-autotab
           /><br />
         </div>
 
@@ -92,6 +97,7 @@
             id="pack"
             name="pack"
             required
+            maxlength="11"
           /><br />
         </div>
 
@@ -103,6 +109,8 @@
             id="palette"
             name="palette"
             required
+            maxlength="10"
+            data-autotab
           /><br />
         </div>
 
@@ -111,6 +119,7 @@
             class="btn btn-dark showTable"
             type="button"
             onclick="ajouterLigne()"
+            id="ajouterButton"
           >
             Ajouter à la table
           </button>
@@ -133,17 +142,22 @@
           </thead>
           <tbody></tbody>
         </table>
-
-        <button
-          class="btn btn-success"
-          type="button"
-          onclick="envoyerDonnees()"
-        >
-          Envoyer à la base de données
-        </button>
-        <button class="btn btn-danger" type="button" onclick="corrigerLignes()">
-          Corriger les lignes
-        </button>
+        <div class="container-button-expedition">
+          <button
+            class="btn btn-success"
+            type="button"
+            onclick="envoyerDonnees()"
+          >
+            Envoyer
+          </button>
+          <button
+            class="btn btn-danger"
+            type="button"
+            onclick="corrigerLignes()"
+          >
+            Corriger les lignes
+          </button>
+        </div>
       </div>
     </div>
     <script
@@ -154,5 +168,6 @@
     <script src="../js/showCommandInPalette.js"></script>
     <script src="../js/addCommand.js"></script>
     <script src="../js/expeditionDate.js"></script>
+    <script src="../js/validInput.js"></script>
   </body>
 </html>
